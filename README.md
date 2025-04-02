@@ -9,6 +9,6 @@ RECOMENDACIONES
 - **Base de datos**: Se usa "gestion_estudiantes"
 - **Tablas automáticas**: Si las tablas no existen, Spring Boot las generará al arrancar.
 
-###Descripción
+##Descripción
 Proyecto de gestión de estudiantes con endpoints **GET, POST, PUT, DELETE**, usando **DTOs** para manejar los datos correctamente.
 La base de datos utilizada es **PostgreSQL** y las dependencias necesarias ya están en "pom.xml".
