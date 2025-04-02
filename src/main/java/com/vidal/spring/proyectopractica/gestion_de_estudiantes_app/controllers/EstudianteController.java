@@ -77,25 +77,6 @@ public class EstudianteController {
         estudianteRepository.delete(estudiante);
 
         return ResponseEntity.noContent().build(); // Devolvemos el codigo 204 como No Content
-    }
-
-    // INCISO A PUT CON GET
-    @GetMapping("/getOneUpdated/{id}")
-    public ResponseEntity<EstudianteDTO> actualizarEstudianteYMostrar(@PathVariable Long id,
-            @RequestBody EstudianteDTO detallesEstudiante) {
-        Estudiante estudiante = estudianteRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("No se encontró el estudiante con el ID " + id));
-
-        estudiante.setNombre(detallesEstudiante.getNombre());
-        estudiante.setApellido(detallesEstudiante.getApellido());
-        estudiante.setNumeroInscripcion(detallesEstudiante.getNumeroInscripcion());
-        estudianteRepository.save(estudiante);
-        EstudianteMapper.INSTANCE.toDTO(estudiante);
-
-        return ResponseEntity.ok(estudianteMapper.toDTO(estudiante)); // mandamos el codigo 200 OK
-    }
-    
-    
-    
+    }    
     
 }
