@@ -3,6 +3,7 @@
 Este proyecto es una API REST desarrollada con Spring Boot desde Visual Studio Code, usando Maven para evitar instalar dependencias manualmente.
 
 RECOMENDACIONES
+
 Revisar puertos: Si el 8082 está ocupado, edita "application.properties" y usa otro.
  Verificar versión de Java**: Si no tienes la versión 24, cambia en "pom.xml":
  "  <java.version>24</java.version> "
