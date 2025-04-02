@@ -8,9 +8,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.vidal.spring.proyectopractica.gestion_de_estudiantes_app.dto.EstudianteDTO;
 import com.vidal.spring.proyectopractica.gestion_de_estudiantes_app.mappers.EstudianteMapper;
-import com.vidal.spring.proyectopractica.gestion_de_estudiantes_app.model.Estudiante;
+import com.vidal.spring.proyectopractica.gestion_de_estudiantes_app.models.Estudiante;
+import com.vidal.spring.proyectopractica.gestion_de_estudiantes_app.models.dto.EstudianteDTO;
 import com.vidal.spring.proyectopractica.gestion_de_estudiantes_app.repository.EstudianteRepository;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/est")
 public class EstudianteController {
 
     @Autowired
@@ -51,7 +51,7 @@ public class EstudianteController {
         Estudiante estudiante = EstudianteMapper.INSTANCE.toEntity(estudianteDTO);
         Estudiante nuevoEstudiante = estudianteRepository.save(estudiante);
 
-        return ResponseEntity.status(HttpStatus.CREATED).body(EstudianteMapper.INSTANCE.toDTO(nuevoEstudiante));
+        return ResponseEntity.status(HttpStatus.CREATED).body(estudianteMapper.toDTO(nuevoEstudiante));
     }
 
     @PutMapping("updateEst/{id}")
@@ -62,6 +62,7 @@ public class EstudianteController {
 
         estudiante.setNombre(detallesEstudiante.getNombre());
         estudiante.setApellido(detallesEstudiante.getApellido());
+        estudiante.setNumeroInscripcion(detallesEstudiante.getNumeroInscripcion());
 
         estudianteRepository.save(estudiante);
 
@@ -87,6 +88,7 @@ public class EstudianteController {
 
         estudiante.setNombre(detallesEstudiante.getNombre());
         estudiante.setApellido(detallesEstudiante.getApellido());
+        estudiante.setNumeroInscripcion(detallesEstudiante.getNumeroInscripcion());
         estudianteRepository.save(estudiante);
         EstudianteMapper.INSTANCE.toDTO(estudiante);
 

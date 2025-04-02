@@ -1,7 +1,7 @@
-package com.vidal.spring.proyectopractica.gestion_de_estudiantes_app.model;
+package com.vidal.spring.proyectopractica.gestion_de_estudiantes_app.models;
 
-import java.time.LocalDate;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -14,14 +14,13 @@ import lombok.experimental.SuperBuilder;
 @NoArgsConstructor
 @AllArgsConstructor
 @SuperBuilder
-@jakarta.persistence.Entity
-@jakarta.persistence.Table(name = "estudiante") // Asegúrate de que la tabla se llame "estudiantes"
+@jakarta.persistence.Table(name = "estudiante") // Asegúrate de que la tabla se llame "estudiante"
+@Entity
 public class Estudiante  {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Generación automática de ID
     private Long id;
     private String nombre;
     private String apellido;
-    private String email;
-    private LocalDate fechaNacimiento;
+    private String numeroInscripcion;
 }

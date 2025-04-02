@@ -6,8 +6,8 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
 
-import com.vidal.spring.proyectopractica.gestion_de_estudiantes_app.dto.EstudianteDTO;
-import com.vidal.spring.proyectopractica.gestion_de_estudiantes_app.model.Estudiante;
+import com.vidal.spring.proyectopractica.gestion_de_estudiantes_app.models.Estudiante;
+import com.vidal.spring.proyectopractica.gestion_de_estudiantes_app.models.dto.EstudianteDTO;
 
 @Mapper(componentModel = "spring")
 public interface EstudianteMapper {

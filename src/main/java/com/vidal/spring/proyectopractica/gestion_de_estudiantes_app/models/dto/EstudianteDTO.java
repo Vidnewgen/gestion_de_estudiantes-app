@@ -1,22 +1,20 @@
-package com.vidal.spring.proyectopractica.gestion_de_estudiantes_app.dto;
-
-import java.time.LocalDate;
+package com.vidal.spring.proyectopractica.gestion_de_estudiantes_app.models.dto;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
+@SuperBuilder
 
 public class EstudianteDTO {
-    private Long id;
+
+    private Long id; 
     private String nombre;
     private String apellido;
-    private String email;
-    private LocalDate fechaNacimiento;
     private String numeroInscripcion;
+
 }
